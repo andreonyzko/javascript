@@ -1,4 +1,3 @@
-
 var age = 65
 console.log(`Voce tem ${idade} anos`)
 if(age<16){

@@ -1,24 +1,24 @@
 function carregar() {
     var msgfield= document.querySelector('#msg')
-    var imgfield= document.querySelector('#img')
+    var img= document.querySelector('#img>img')
     var body= document.querySelector('body')
     var now= new Date()
     // var hour= now.getHours()
-    var hour= 1
+    var hour= 13
     var minutes= now.getMinutes()
     msgfield.innerHTML = `<p>Agora são ${hour}h${minutes}m</p>`
 
     if (hour>0 && hour<12){
-        imgfield.innerHTML = `<img src="media/manha.jpg" alt="fotodamanha">`
-        body.style.background= '#BFC7C8'
+        img.src= 'media/manha.jpg'
+        body.style.background= '#fcdd95'
     } else if(hour<=18){
-        imgfield.innerHTML = `<img src="media/tarde.jpg" alt="fotodamanha">`
-        body.style.background= '#3C2B41'
+        img.src= 'media/tarde.jpg'
+        body.style.background= '#DE9942'
     } else if(hour>18 && hour<=23){
-        imgfield.innerHTML = `<img src="media/noite.jpg" alt="fotodamanha">`
-        body.style.background= 'black'
+        img.src= 'media/noite.jpg'
+        body.style.background= '#011F3A'
     } else{
         msgfield.innerHTML = `<p>ERRO: hora invalida</p>`
-        imgfield.innerHTML= ``
+        img.src= ''
     }
 }

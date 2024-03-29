@@ -3,8 +3,7 @@ function carregar() {
     var img= document.querySelector('#img>img')
     var body= document.querySelector('body')
     var now= new Date()
-    // var hour= now.getHours()
-    var hour= 13
+    var hour= now.getHours()
     var minutes= now.getMinutes()
     msgfield.innerHTML = `<p>Agora são ${hour}h${minutes}m</p>`
 

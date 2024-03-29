@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+    <section>
+        <div id="form-container">
+            <p>
+                <label for="yearbirth">Ano de nascimento: </label> <input type="number" name="yearbirth" id="yearbirth" required>
+            </p>
+            <p>
+                Sexo: <input type="radio" name="gender" id="male" checked>Masculino <input type="radio" name="gender" id="female">Feminino
+            </p>
+            <input type="submit" value="Verificar" onclick="verify()">
+        </div>
+        <div id="result-container">
+            <p></p>
+        </div>
+    </section>
+    <footer>
+        &copy; Andre Onyszko
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

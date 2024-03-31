@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador de idade</title>
+    <title>Idade</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Verificador de idade</h1>
+        <h1>Verificador de Idade</h1>
     </header>
     <section>
-        <div id="form-container">
+        <div>
             <p>
-                <label for="yearbirth">Ano de nascimento: </label> <input type="number" name="yearbirth" id="yearbirth" required>
+                Ano de nascimento:
+                <input type="number" name="yearbirth" id="yearbirth" required min="0">
             </p>
             <p>
-                Sexo: <input type="radio" name="gender" id="male" checked>Masculino <input type="radio" name="gender" id="female">Feminino
+                Sexo:
+                <input type="radio" name="gender" id="male" checked>
+                <label for="male">Masculino</label>
+                <input type="radio" name="gender" id="female">
+                <label for="female">Feminino</label>
             </p>
             <input type="submit" value="Verificar" onclick="verify()">
         </div>
-        <div id="result-container">
+        <div id="container-result">
             <p></p>
+            <img src="" alt="" id="imgresult">
         </div>
     </section>
     <footer>

@@ -4,19 +4,28 @@ function count() {
     let jump= document.querySelector('#jump').value
     let resultfield= document.querySelector('#resultfield p')
 
-    if(Number(start) > Number(end) || Number(start)+Number(jump) > Number(end) || start.length == 0 || end.length == 0 || jump.length == 0){
-        alert('[ERRO] verifique os valores e tente novamente')
+    if(start.length == 0 || end.length == 0 || jump.length == 0){
+        resultfield.innerText = 'Impossível contar!'
     } else{
         start = Number(start)
         end = Number(end)
         jump = Number(jump)
+
+        if(jump == 0){
+            jump= 1
+        }
         
         resultfield.innerText = ''
-        let i=start
-        do{
-            resultfield.innerText+= `${i} 👉 `
-            i+=jump
-        }while(i<=end)
+
+        if(start <= end){
+            for(let i=start; i<=end; i+=jump){
+                resultfield.innerText += `${i} 👉 `
+            }
+        } else if (start > end){
+            for(let i=start; i>=end; i-=jump){
+                resultfield.innerText += `${i} 👉 `
+            }
+        }
 
         resultfield.innerText+= `🏁`
     }

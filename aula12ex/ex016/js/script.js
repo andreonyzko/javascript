@@ -6,8 +6,18 @@ function verify() {
         alert('[ERRO] ano de nascimento futuro')
     } else{
         var gender= document.getElementsByName('gender')
-        var imgresult= document.querySelector('#container-result img')
-        var txtresult= document.querySelector('#container-result p')
+
+        var containerresult = document.querySelector('#container-result')
+        containerresult.innerHTML = ''
+
+        var txtresult= document.createElement('p')
+        containerresult.appendChild(txtresult)
+
+        var imgresult = document.createElement('img')
+        containerresult.appendChild(imgresult)
+        imgresult.style.width = '250px'
+        imgresult.style.borderRadius= '50%'
+
         var genderresult= ''
         if(gender[0].checked){
             gender = 'mas'

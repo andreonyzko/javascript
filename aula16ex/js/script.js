@@ -5,18 +5,35 @@ function adicionar() {
     let numberinp = document.querySelector('#number')
     resultfield.innerHTML = ``
 
-    if(number.length == 0){
-        alert('Informe um número entre 1 a 100')
-    } else if(number < 1 || number > 100){
-        alert('O número deve ser entre 1 e 100')
-    } else if(values.indexOf(number) != -1) {
-        alert('Valor já adicionado, informe outro')
-    } else{
+    if(verifyNumber(number) && verifyInList(number)){
         let valuesfield = document.querySelector('#values')
         values.push(number)
         valuesfield.innerHTML += `<option>Valor ${number} adicionado</option>`
+    } else{
+
     }
     numberinp.value = ''
+}
+
+function verifyNumber(number) {
+    if(number.length == 0){
+        alert('Informe um número entre 1 a 100')
+        return false
+    } else if(number < 1 || number > 100){
+        alert('O número deve ser entre 1 e 100')
+        return false
+    } else{
+        return true
+    }
+}
+
+function verifyInList(number){
+    if(values.indexOf(number) != '-1'){
+        alert('Valor já adicionado, informe outro')
+        return false
+    } else{
+        return true
+    }
 }
 
 function finalizar() {
